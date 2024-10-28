@@ -1,0 +1,63 @@
+{
+  "HomePage": {
+    "hero": {
+      "title": "Find the Best Jobs in Vietnam",
+      "subtitle": "Explore thousands of job opportunities from top companies. Build your career today!",
+      "searchPlaceholder": "Enter keywords, position, company...",
+      "searchButton": "Search"
+    },
+    "featured": {
+      "title": "Featured Jobs",
+      "viewMore": "View More Jobs",
+      "jobs": {
+        "softwareEngineer": {
+          "title": "Software Engineer",
+          "company": "TechViet Corp",
+          "location": "Hanoi",
+          "salary": "$1,000 - $1,500"
+        },
+        "marketingSpecialist": {
+          "title": "Marketing Specialist",
+          "company": "SaigonMedia",
+          "location": "Ho Chi Minh City",
+          "salary": "$800 - $1,200"
+        },
+        "projectManager": {
+          "title": "Project Manager",
+          "company": "BuildVN",
+          "location": "Da Nang",
+          "salary": "$1,300 - $1,800"
+        }
+      }
+    },
+    "whyUs": {
+      "title": "Why Choose VietJobs?",
+      "features": {
+        "diverse": {
+          "title": "Diverse Job Opportunities",
+          "description": "Thousands of jobs from top companies across various industries."
+        },
+        "direct": {
+          "title": "Direct Connections",
+          "description": "Connect directly with employers, no intermediaries."
+        },
+        "reputable": {
+          "title": "Reputable Companies",
+          "description": "We only work with reputable companies offering great work environments."
+        }
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 VietJobs. All rights reserved.",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "Navigation": {
+    "logo": "VietJobs",
+    "findJobs": "Find Jobs",
+    "postJob": "Post a Job",
+    "blog": "Blog",
+    "contact": "Contact"
+  }
+}

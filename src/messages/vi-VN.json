@@ -1,0 +1,66 @@
+{
+  "HomePage": {
+    "title": "Trang Chủ",
+    "SignIn": "Đăng Nhập",
+    "SignUp": "Đăng Ký",
+    "hero": {
+      "title": "Tìm Việc Làm Tốt Nhất Tại Việt Nam",
+      "subtitle": "Khám phá hàng ngàn cơ hội việc làm từ các công ty hàng đầu. Xây dựng sự nghiệp của bạn ngay hôm nay!",
+      "searchPlaceholder": "Nhập từ khóa, vị trí, công ty...",
+      "searchButton": "Tìm kiếm"
+    },
+    "featured": {
+      "title": "Việc Làm Nổi Bật",
+      "viewMore": "Xem Thêm Việc Làm",
+      "jobs": {
+        "softwareEngineer": {
+          "title": "Kỹ Sư Phần Mềm",
+          "company": "TechViet Corp",
+          "location": "Hà Nội",
+          "salary": "$1,000 - $1,500"
+        },
+        "marketingSpecialist": {
+          "title": "Chuyên Viên Marketing",
+          "company": "SaigonMedia",
+          "location": "TP. Hồ Chí Minh",
+          "salary": "$800 - $1,200"
+        },
+        "projectManager": {
+          "title": "Quản Lý Dự Án",
+          "company": "BuildVN",
+          "location": "Đà Nẵng",
+          "salary": "$1,300 - $1,800"
+        }
+      }
+    },
+    "whyUs": {
+      "title": "Tại Sao Chọn VietJobs?",
+      "features": {
+        "diverse": {
+          "title": "Cơ Hội Việc Làm Đa Dạng",
+          "description": "Hàng ngàn việc làm từ các công ty hàng đầu trong nhiều lĩnh vực."
+        },
+        "direct": {
+          "title": "Kết Nối Trực Tiếp",
+          "description": "Liên hệ trực tiếp với nhà tuyển dụng, không qua trung gian."
+        },
+        "reputable": {
+          "title": "Công Ty Uy Tín",
+          "description": "Chúng tôi chỉ làm việc với các công ty có uy tín và môi trường làm việc tốt."
+        }
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 VietJobs. Bảo lưu mọi quyền.",
+      "terms": "Điều Khoản Dịch Vụ",
+      "privacy": "Chính Sách Bảo Mật"
+    }
+  },
+  "Navigation": {
+    "logo": "VietJobs",
+    "findJobs": "Tìm Việc",
+    "postJob": "Đăng Tuyển",
+    "blog": "Blog",
+    "contact": "Liên Hệ"
+  }
+}
