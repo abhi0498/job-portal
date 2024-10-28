@@ -1,25 +1,15 @@
 "use client";
 
-import {
-  Box,
-  Flex,
-  HStack,
-  Link,
-  Button,
-  IconButton,
-  Container,
-  Text,
-  VisuallyHidden,
-} from "@chakra-ui/react";
-import { useColorModeValue } from "@/components/ui/color-mode";
+// import { useColorModeValue } from "@/components/ui/color-mode";
+import { Box, Flex, Link, VisuallyHidden } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import NextLink from "next/link";
 import { LuBriefcase } from "react-icons/lu";
 
 const Navbar = () => {
   const t = useTranslations("Navigation");
-  const bgColor = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
+  //   const bgColor = useColorModeValue("white", "gray.800");
+  //   const borderColor = useColorModeValue("gray.200", "gray.700");
 
   return (
     <Box

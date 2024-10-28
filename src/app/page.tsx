@@ -1,27 +1,19 @@
 import {
+  Badge,
   Box,
+  Button,
+  Card,
   Container,
   Flex,
-  VStack,
   Heading,
-  Text,
-  Input,
-  Button,
-  SimpleGrid,
-  Card,
-  Badge,
   HStack,
-  Link,
+  Input,
+  SimpleGrid,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
-import {
-  LuBriefcase,
-  LuBuilding2,
-  LuSearch,
-  LuTrendingUp,
-  LuUsers,
-} from "react-icons/lu";
 import { useTranslations } from "next-intl";
+import { LuBuilding2, LuSearch, LuTrendingUp, LuUsers } from "react-icons/lu";
 
 export default function Component() {
   const t = useTranslations("HomePage");
