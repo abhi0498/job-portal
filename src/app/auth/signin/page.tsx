@@ -38,6 +38,7 @@ export default function RegisterForm() {
       router.push("/");
       router.refresh();
     } catch (error) {
+      console.log(error);
       toaster.create({
         title: "Error",
         description: "An error occurred. Please try again.",
