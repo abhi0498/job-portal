@@ -1,22 +1,14 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Input,
-  VStack,
-  Select,
-  Text,
-  Card,
-} from "@chakra-ui/react";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { PasswordInput } from "@/components/ui/password-input";
-import { Toaster, toaster } from "@/components/ui/toaster";
+import { toaster } from "@/components/ui/toaster";
+import { Box, Button, Card, Input, Text, VStack } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Field } from "../ui/field";
 
 export default function RegisterForm() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [, setIsLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

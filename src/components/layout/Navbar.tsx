@@ -16,7 +16,7 @@ import { Avatar } from "../ui/avatar";
 
 const Navbar = () => {
   const t = useTranslations("Navigation");
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   return (
     <Box

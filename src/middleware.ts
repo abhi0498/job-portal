@@ -1,15 +1,15 @@
 // middleware.ts
 import { NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
-import createIntlMiddleware from "next-intl/middleware";
+// import createIntlMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 
-// Define available locales and default locale
-const intlMiddleware = createIntlMiddleware({
-  locales: ["en", "vi-VN"],
-  defaultLocale: "en",
-  localePrefix: "never",
-});
+// // Define available locales and default locale
+// const intlMiddleware = createIntlMiddleware({
+//   locales: ["en", "vi-VN"],
+//   defaultLocale: "en",
+//   localePrefix: "never",
+// });
 
 export async function middleware(request: NextRequest) {
   const token = await getToken({ req: request });
