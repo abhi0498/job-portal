@@ -4,8 +4,11 @@ import { Provider } from "@/components/ui/provider";
 import { Container } from "@chakra-ui/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import "./globals.css";
+// import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
+
 import Footer from "@/components/layout/Footer";
+import RootProvider from "@/providers/RootProvider";
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
   const locale = await getLocale();
@@ -20,11 +23,14 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <NextIntlClientProvider messages={messages}>
           <ColorModeProvider defaultTheme="system" enableSystem>
             <Provider>
-              <Navbar />
-              <Container px={16} pt={5}>
-                {children}
-              </Container>
-              <Footer />
+              <RootProvider>
+                <Toaster />
+                <Navbar />
+                <Container px={16} pt={5} minH="85vh">
+                  {children}
+                </Container>
+                <Footer />
+              </RootProvider>
             </Provider>
           </ColorModeProvider>
         </NextIntlClientProvider>

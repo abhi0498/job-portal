@@ -18,12 +18,28 @@ const JobSchema = new mongoose.Schema({
     type: String,
     required: [true, "Job description is required"],
   },
+  tags: {
+    type: Array,
+  },
+  sections: {
+    type: Array,
+    default: [
+      {
+        title: "Full Job Description",
+        content: "",
+      },
+    ],
+  },
   salary: {
     type: Number,
   },
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
   },
 });
 

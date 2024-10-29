@@ -13,38 +13,55 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { PasswordInput } from "@/components/ui/password-input";
 import { Toaster, toaster } from "@/components/ui/toaster";
-import { Field } from "@/components/ui/field";
-import { signIn } from "next-auth/react";
+import { Field } from "../ui/field";
 
 export default function RegisterForm() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setError("");
 
     const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      password: formData.get("password"),
+      role: formData.get("role"),
+    };
 
     try {
-      const result = await signIn("credentials", {
-        email: formData.get("email"),
-        password: formData.get("password"),
-        redirect: false,
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
 
-      if (result?.error) {
-        setError("Invalid email or password");
-        return;
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Registration failed");
       }
 
-      // Redirect to dashboard or home page after successful login
-      router.push("/");
-      router.refresh();
+      toaster.create({
+        title: "Registration successful",
+        description: "You can now sign in with your credentials",
+        type: "success",
+        duration: 5000,
+      });
+
+      router.push("/auth/signin");
     } catch (error) {
-      setError("An error occurred. Please try again.");
+      toaster.create({
+        title: "Registration failed",
+        description:
+          error instanceof Error ? error.message : "Please try again",
+        type: "error",
+        duration: 5000,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -55,11 +72,15 @@ export default function RegisterForm() {
       <Card.Root p={5} style={{ margin: "auto" }}>
         <Card.Header>
           <Text fontSize="2xl" fontWeight="bold">
-            Login
+            Register
           </Text>
         </Card.Header>
         <Card.Body>
           <VStack gap={4}>
+            <Field label="Name" helperText="Enter your full name">
+              <Input name="name" type="text" borderColor="gray.200" />
+            </Field>
+
             <Field label="Email" helperText="Enter your email address">
               <Input name="email" type="email" placeholder="me@example.com" />
             </Field>
@@ -72,7 +93,7 @@ export default function RegisterForm() {
             </Field>
 
             <Button type="submit" colorScheme="blue" width="full">
-              Login
+              Register
             </Button>
           </VStack>
         </Card.Body>

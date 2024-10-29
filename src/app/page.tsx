@@ -21,24 +21,24 @@ export default function Component() {
   const featuredJobs = [
     {
       key: "softwareEngineer",
-      title: t("featured.jobs.softwareEngineer.title"),
-      company: t("featured.jobs.softwareEngineer.company"),
-      location: t("featured.jobs.softwareEngineer.location"),
-      salary: t("featured.jobs.softwareEngineer.salary"),
+      title: "Software Engineer",
+      company: "Google",
+      location: "Hanoi, Vietnam",
+      salary: "1000000 VND",
     },
     {
       key: "marketingSpecialist",
-      title: t("featured.jobs.marketingSpecialist.title"),
-      company: t("featured.jobs.marketingSpecialist.company"),
-      location: t("featured.jobs.marketingSpecialist.location"),
-      salary: t("featured.jobs.marketingSpecialist.salary"),
+      title: "Marketing Specialist",
+      company: "Facebook",
+      location: "Hanoi, Vietnam",
+      salary: "1000000 VND",
     },
     {
       key: "projectManager",
-      title: t("featured.jobs.projectManager.title"),
-      company: t("featured.jobs.projectManager.company"),
-      location: t("featured.jobs.projectManager.location"),
-      salary: t("featured.jobs.projectManager.salary"),
+      title: "Project Manager",
+      company: "Amazon",
+      location: "Hanoi, Vietnam",
+      salary: "1000000 VND",
     },
   ];
 
@@ -63,7 +63,7 @@ export default function Component() {
   return (
     <Flex direction="column" minH="100vh">
       <Box as="main" flex="1">
-        <Box as="section" w="full" pt={{ base: 12, md: 24, lg: 32, xl: 48 }}>
+        <Box as="section" w="full" pt={{ base: 12, md: 24, lg: 32 }}>
           <Container px={{ base: 4, md: 6 }}>
             <VStack gap={4} align="center" textAlign="center">
               <VStack gap={2}>
@@ -79,6 +79,7 @@ export default function Component() {
                   maxW="700px"
                   mx="auto"
                   color="gray.200"
+                  pt={6}
                   fontSize={{ base: "md", md: "xl" }}
                 >
                   {t("hero.subtitle")}
@@ -90,7 +91,6 @@ export default function Component() {
                     maxW="lg"
                     flex="1"
                     p={4}
-                    bg="white"
                     placeholder={t("hero.searchPlaceholder")}
                     type="text"
                   />
