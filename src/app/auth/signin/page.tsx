@@ -1,30 +1,20 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Input,
-  VStack,
-  Select,
-  Text,
-  Card,
-} from "@chakra-ui/react";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { PasswordInput } from "@/components/ui/password-input";
-import { Toaster, toaster } from "@/components/ui/toaster";
 import { Field } from "@/components/ui/field";
+import { PasswordInput } from "@/components/ui/password-input";
+import { toaster } from "@/components/ui/toaster";
+import { Box, Button, Card, Input, Text, VStack } from "@chakra-ui/react";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function RegisterForm() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [, setIsLoading] = useState(false);
   const router = useRouter();
-  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setError("");
 
     const formData = new FormData(e.currentTarget);
 
@@ -36,7 +26,11 @@ export default function RegisterForm() {
       });
 
       if (result?.error) {
-        setError("Invalid email or password");
+        toaster.create({
+          title: "Error",
+          description: "Invalid email or password",
+          type: "error",
+        });
         return;
       }
 
@@ -44,7 +38,11 @@ export default function RegisterForm() {
       router.push("/");
       router.refresh();
     } catch (error) {
-      setError("An error occurred. Please try again.");
+      toaster.create({
+        title: "Error",
+        description: "An error occurred. Please try again.",
+        type: "error",
+      });
     } finally {
       setIsLoading(false);
     }
