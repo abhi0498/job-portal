@@ -28,6 +28,7 @@ export const authOptions = {
       },
       async authorize(credentials) {
         await connectToDatabase();
+        console.log(credentials);
 
         const user = await User.findOne({ email: credentials?.email });
         console.log(user);
@@ -55,11 +56,16 @@ export const authOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.role = user.role; // Add role to the token
+        token.email = user.email;
       }
       return token;
     },
     async session({ session, token }) {
-      session.user.role = token.role; // Add role to the session
+      session.user = await User.findOne(
+        { email: token.email },
+        { password: 0 }
+      );
+
       return session;
     },
   },

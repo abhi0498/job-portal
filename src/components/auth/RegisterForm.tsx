@@ -2,10 +2,12 @@
 
 import { PasswordInput } from "@/components/ui/password-input";
 import { toaster } from "@/components/ui/toaster";
-import { Box, Button, Card, Input, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Card, Flex, Input, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Field } from "../ui/field";
+import NextLink from "next/link";
+import { Link } from "@chakra-ui/react";
 
 export default function RegisterForm() {
   const [, setIsLoading] = useState(false);
@@ -60,36 +62,47 @@ export default function RegisterForm() {
   };
 
   return (
-    <Box as="form" onSubmit={handleSubmit} width="100%" maxW="md">
-      <Card.Root p={5} style={{ margin: "auto" }}>
-        <Card.Header>
-          <Text fontSize="2xl" fontWeight="bold">
-            Register
-          </Text>
-        </Card.Header>
-        <Card.Body>
-          <VStack gap={4}>
-            <Field label="Name" helperText="Enter your full name">
-              <Input name="name" type="text" borderColor="gray.200" />
-            </Field>
-
-            <Field label="Email" helperText="Enter your email address">
-              <Input name="email" type="email" placeholder="me@example.com" />
-            </Field>
-
-            <Field
-              label="Password"
-              helperText="Password must be at least 8 characters long"
-            >
-              <PasswordInput name="password" />
-            </Field>
-
-            <Button type="submit" colorScheme="blue" width="full">
+    <Flex justify="center" align="center" minH="80vh">
+      <Box as="form" onSubmit={handleSubmit} width="100%" maxW="md">
+        <Card.Root p={5} style={{ margin: "auto" }}>
+          <Card.Header>
+            <Text fontSize="2xl" fontWeight="bold">
               Register
-            </Button>
-          </VStack>
-        </Card.Body>
-      </Card.Root>
-    </Box>
+            </Text>
+          </Card.Header>
+          <Card.Body>
+            <VStack gap={4}>
+              <Field label="Name" helperText="Enter your full name">
+                <Input name="name" type="text" borderColor="gray.200" />
+              </Field>
+
+              <Field label="Email" helperText="Enter your email address">
+                <Input name="email" type="email" placeholder="me@example.com" />
+              </Field>
+
+              <Field
+                label="Password"
+                helperText="Password must be at least 8 characters long"
+              >
+                <PasswordInput name="password" />
+              </Field>
+
+              <Button type="submit" colorScheme="blue" width="full">
+                Register
+              </Button>
+
+              <Link
+                as={NextLink}
+                href="/auth/signin"
+                fontSize="sm"
+                fontWeight="medium"
+              >
+                Already have an account? Sign in
+              </Link>
+            </VStack>
+          </Card.Body>
+        </Card.Root>
+      </Box>
+    </Flex>
   );
 }

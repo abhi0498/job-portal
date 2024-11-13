@@ -39,7 +39,7 @@ const Navbar = () => {
       <Flex as="nav" ml="auto" gap={{ base: 4, sm: 6 }} alignItems="center">
         <Link
           as={NextLink}
-          href="/auth/register"
+          href="/jobs-for-you"
           fontSize="sm"
           fontWeight="medium"
           _hover={{ textDecoration: "underline", textUnderlineOffset: "4px" }}
@@ -48,30 +48,12 @@ const Navbar = () => {
         </Link>
         <Link
           as={NextLink}
-          href="#"
+          href="/posted-jobs"
           fontSize="sm"
           fontWeight="medium"
           _hover={{ textDecoration: "underline", textUnderlineOffset: "4px" }}
         >
           {t("postJob")}
-        </Link>
-        <Link
-          as={NextLink}
-          href="#"
-          fontSize="sm"
-          fontWeight="medium"
-          _hover={{ textDecoration: "underline", textUnderlineOffset: "4px" }}
-        >
-          {t("blog")}
-        </Link>
-        <Link
-          as={NextLink}
-          href="#"
-          fontSize="sm"
-          fontWeight="medium"
-          _hover={{ textDecoration: "underline", textUnderlineOffset: "4px" }}
-        >
-          {t("contact")}
         </Link>
 
         {session ? (
@@ -128,7 +110,17 @@ const Navbar = () => {
               </Stack>
             </HoverCardContent>
           </HoverCardRoot>
-        ) : null}
+        ) : (
+          <Link
+            as={NextLink}
+            href="/auth/signin"
+            fontSize="sm"
+            fontWeight="medium"
+            _hover={{ textDecoration: "underline", textUnderlineOffset: "4px" }}
+          >
+            Sign in
+          </Link>
+        )}
       </Flex>
     </Box>
   );

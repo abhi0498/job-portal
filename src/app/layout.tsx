@@ -26,7 +26,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
               <RootProvider>
                 <Toaster />
                 <Navbar />
-                <Container px={16} pt={5} minH="85vh">
+                <Container px={{ base: 6, md: 12, lg: 16 }} pt={5} minH="85vh">
                   {children}
                 </Container>
                 <Footer />
